@@ -13,7 +13,7 @@ RUN apt-get update -qq && \
 
 # Install dependencies
 COPY bun.lock package.json ./
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Copy and build
 COPY . .
