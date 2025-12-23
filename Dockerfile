@@ -1,10 +1,12 @@
 # syntax = docker/dockerfile:1
 
-ARG BUN_VERSION=1.3.2
-FROM oven/bun:${BUN_VERSION}-slim AS build
+FROM node:22-slim AS build
 
 WORKDIR /app
 ENV NODE_ENV="production"
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Install packages needed for sharp native module
 RUN apt-get update -qq && \
@@ -12,12 +14,12 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
-COPY bun.lock package.json ./
-RUN bun install
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm install --frozen-lockfile || pnpm install
 
 # Copy and build
 COPY . .
-RUN bun run build
+RUN pnpm run build
 
 # Final stage - minimal nginx
 FROM nginx:alpine
