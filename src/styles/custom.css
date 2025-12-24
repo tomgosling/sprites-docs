@@ -102,8 +102,8 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.268 0.007 34.298);
   --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.648 0.2 131.684);
-  --accent-foreground: oklch(0.986 0.031 120.757);
+  --accent: oklch(0.25 0.05 131.684);
+  --accent-foreground: oklch(0.95 0.01 131.684);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -117,8 +117,8 @@
   --sidebar-foreground: oklch(0.985 0.001 106.423);
   --sidebar-primary: oklch(0.768 0.233 130.85);
   --sidebar-primary-foreground: oklch(0.986 0.031 120.757);
-  --sidebar-accent: oklch(0.648 0.2 131.684);
-  --sidebar-accent-foreground: oklch(0.986 0.031 120.757);
+  --sidebar-accent: oklch(0.25 0.05 131.684);
+  --sidebar-accent-foreground: oklch(0.95 0.01 131.684);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.648 0.2 131.684);
 }
@@ -437,4 +437,42 @@ main .sl-markdown-content a:not(.sl-badge):not([class*="button"]):not([class*="b
 
 [data-theme='dark'] main .sl-markdown-content a:not(.sl-badge):not([class*="button"]):not([class*="btn"]):hover {
   color: oklch(0.7 0.2 285) !important;
+}
+
+/* Starlight Tabs - shadcn style */
+starlight-tabs [role="tablist"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--muted);
+  border-radius: 0.5rem;
+  border: none;
+}
+
+starlight-tabs [role="tab"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+starlight-tabs [role="tab"]:hover {
+  color: var(--foreground);
+}
+
+starlight-tabs [role="tab"][aria-selected="true"] {
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
