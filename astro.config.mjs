@@ -38,6 +38,7 @@ export default defineConfig({
           items: [
             { label: 'Overview', slug: 'index' },
             { label: 'Quickstart', slug: 'quickstart' },
+            { label: 'Working with Sprites', slug: 'working-with-sprites' },
           ],
         },
         {
