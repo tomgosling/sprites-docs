@@ -477,7 +477,11 @@ starlight-tabs [role="tab"][aria-selected="true"] {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
-/* Search dialog open state - blur page content */
+/* Search dialog open state - blur page content and prevent scroll */
+body.search-dialog-open {
+  overflow: hidden;
+}
+
 body.search-dialog-open .page {
   filter: blur(8px);
   transition: filter 0.15s ease;
