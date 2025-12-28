@@ -352,9 +352,9 @@ export const SearchDialog: React.FC<SearchDialogProps> = ({
           return;
         }
 
-        // Load first 6 page results
+        // Load first 10 page results
         const loadedResults = await Promise.all(
-          search.results.slice(0, 6).map((r) => r.data()),
+          search.results.slice(0, 10).map((r) => r.data()),
         );
 
         // Final check before setting state
