@@ -15,6 +15,8 @@ pnpm build           # Build static site to ./dist/
 pnpm preview         # Preview production build locally
 pnpm lint            # Run Biome linter
 pnpm lint:fix        # Auto-fix lint issues
+pnpm test:e2e        # Run Cypress e2e tests (starts preview server automatically)
+pnpm test:e2e:open   # Open Cypress GUI for interactive testing
 ```
 
 ## Architecture
@@ -31,7 +33,7 @@ pnpm lint:fix        # Auto-fix lint issues
 - `src/components/ui/` - shadcn/ui base components (Radix-based)
 - `src/components/*.astro` - Astro wrapper components for React islands
 - `src/styles/custom.css` - Theme customization (Starlight + shadcn variables)
-- `astro.config.mjs` - Site config including sidebar structure
+- `astro.config.ts` - Site config including sidebar structure
 
 ### Component Pattern
 React components are wrapped in `.astro` files for MDX usage. All React components export from `src/components/react/index.ts`. Use `client:load` directive when importing React components in MDX.
@@ -45,6 +47,6 @@ Custom Starlight components in `src/components/` override defaults: `Head.astro`
 
 ## Styling Notes
 
-- Theme uses sharp corners (`--radius: 0`, `--sl-border-radius: 0`)
+- Theme uses rounded corners (`--radius: 0.5rem`)
 - Dark mode is default; light mode uses violet accent (hue 285), dark uses teal/green (hue ~131)
 - Tailwind v4 custom variant: `@custom-variant dark (&:is(.dark *, [data-theme="dark"] *))`
