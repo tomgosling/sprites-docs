@@ -83,6 +83,27 @@ export default defineConfig({
         },
       ],
       head: [
+        // Favicons for Google Search and browsers
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'manifest', href: '/site.webmanifest' },
+        },
         // Google Search Console verification
         {
           tag: 'meta',
