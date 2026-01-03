@@ -317,24 +317,24 @@ header.header {
   border-bottom-color: var(--sl-color-hairline);
 }
 
-/* Dark mode - remove borders between sections (except header) */
-[data-theme='dark'] .sidebar-pane {
+/* Remove borders between sections (except header) */
+.sidebar-pane {
   border-inline-end: none;
 }
 
-[data-theme='dark'] .right-sidebar {
+.right-sidebar {
   border-inline-start: none;
 }
 
-[data-theme='dark'] .content-panel {
+.content-panel {
   border-top: none;
 }
 
-[data-theme='dark'] nav.sidebar {
+nav.sidebar {
   border: none;
 }
 
-[data-theme='dark'] .sidebar-content {
+.sidebar-content {
   border: none;
 }
 
