@@ -318,6 +318,13 @@ pre[data-bash-prompt] > code {
   --ec-brdCol: var(--sl-color-hairline);
 }
 
+:root[data-theme='dark'],
+:root[data-theme='dark'] .expressive-code {
+  --ec-codeBg: oklch(0.14 0 0);
+  --ec-frm-edBg: oklch(0.14 0 0);
+  --ec-frm-trmBg: oklch(0.14 0 0);
+}
+
 /* Ensure frame has relative positioning for overlays */
 .expressive-code .frame {
   position: relative;
@@ -366,16 +373,17 @@ pre[data-bash-prompt] > code {
   .expressive-code .code-fade-overlay {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: var(--ec-brdWd, 1px);
+    right: var(--ec-brdWd, 1px);
     height: 2.5rem; /* Approximately first line height */
     width: 8rem;
+    border-top-right-radius: var(--ec-brdRad, 0.5rem);
     background: linear-gradient(
       to right,
       transparent 0px,
-      color-mix(in srgb, var(--code-background) 40%, transparent) 16px,
-      color-mix(in srgb, var(--code-background) 70%, transparent) 32px,
-      color-mix(in srgb, var(--code-background) 90%, transparent) 48px,
+      color-mix(in oklch, var(--code-background) 40%, transparent) 16px,
+      color-mix(in oklch, var(--code-background) 70%, transparent) 32px,
+      color-mix(in oklch, var(--code-background) 90%, transparent) 48px,
       var(--code-background) 56px
     );
     pointer-events: none;
