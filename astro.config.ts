@@ -18,6 +18,17 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Sprites',
+      expressiveCode: {
+        shiki: {
+          langs: [
+            {
+              name: 'output',
+              scopeName: 'text.output',
+              patterns: [],
+            },
+          ],
+        },
+      },
       disable404Route: true,
       logo: {
         light: './src/assets/logo-light.svg',
