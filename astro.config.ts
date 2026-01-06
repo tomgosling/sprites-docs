@@ -46,7 +46,7 @@ export default defineConfig({
         },
       ],
       editLink: {
-        baseUrl: 'https://github.com/superfly/sprites-docs/edit/master/',
+        baseUrl: 'https://github.com/superfly/sprites-docs/edit/main/',
       },
       sidebar: [
         {
