@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "generate:api": "npx tsx scripts/generate-api-docs.ts",
+    "generate:cli-docs": "tsx scripts/generate-cli-docs/index.ts",
     "dev": "pnpm generate:api && astro dev",
     "start": "pnpm generate:api && astro dev",
     "build": "pnpm generate:api && astro build",
